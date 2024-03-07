@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/pp.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <title>Movie List</title>
+</head>
+
+<body>
+    <Header>
+        <div class="nav-cont">
+            <div class="logo">
+                <a href="index.html"><i class="fa-solid fa-film"> MOVIE LIST</i></a>                <!-- <a href="index.html"><h1><i class="fa-solid fa-film"></i> Movie List </h1></a> -->
+            </div>
+
+            <nav>
+                <ul>
+                    <li><input id="inpBuscar" type="text" placeholder="Buscador"><button onclick="buscarPalabra()" id="agregar-movie" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></li>
+                    <li><button onclick="mostrarPopular()"  id="Popular">POPULARES</button></li>
+                    <li><button onclick='mostrarFavs()' id="favoritos">MIS FAVORITOS <span id="spanfav"></span></button></li>
+                </ul>
+            </nav>
+        </div>
+    </Header>
+
+    <!-- FILTROS -->
+    <div class="filtro-container" id="divFiltro">
+        <label for="generos-filtro">
+            Filtrar por genero: 
+        </label>
+            <select name="filtro-container" id="filtro-container" onchange="filtrar()"><h5>asdasdasd</h5>
+                <option value="">Todos</option>
+                <option value="28">Accion</option>
+                <option value="12">Aventura</option>
+                <option value="16">Animacion</option>
+                <option value="35">Comedia</option>
+                <option value="80">Crimen</option>
+                <option value="99">Documental</option>
+                <option value="18">Drama</option>
+                <option value="10751">Familia</option>
+                <option value="14">Fantasia</option>
+                <option value="36">Historia</option>
+                <option value="27">Terror</option>
+                <option value="10402">Musical</option>
+                <option value="10749">Romance</option>
+                <option value="878">Ciencia Ficcion</option>
+                <option value="53">Suspenso</option>
+                <option value="37">Western</option>
+                <option value="9648">Misterio</option>
+                <option value="10752">Belica</option>
+
+            </select>
+
+    </div>
+    
+    
+
+
+
+
+    <!-- CONT POPULAR -->
+    <article id="cont-popular"></article>
+    <!-- CONT MAIN -->
+    <article class='cont-pelis' id="cont-pelis"></article>
+    <!-- PAGINACION -->
+    <div id="contBtns" class="btn-pagincaion">
+        <button class="fa-solid fa-arrow-left" onclick=restarPage()  id="pagePrev"></button>
+        <span id="spanPage"></span>
+        <button class="fa-solid fa-arrow-right" onclick=sumarPage() id="pageNext"></button>
+    </div>
+
+
+
+    <footer> 
+        <SMAll>Proyecto final de CoderHouse JavaScript</SMAll>
+    </footer>
+
+    
+    <script src="const.js"></script>
+    <script src="favoritos.js"></script>
+    <script src="main.js"></script> 
+</body>
+</html>
